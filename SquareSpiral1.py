@@ -2,8 +2,11 @@
 import turtle
 turtle.bgcolor("black")
 t = turtle.Pen()
-colors = ["salmon","saddle brown","PaleVioletRed","plum1"] # переменная со списком цветов
-for x in range(100):
-    t.color(colors[x%4]) # 0<=x<=100(range), x%4 - результатом будет остаток от деления. За 100 итераций цикла мы "пройдем" каждый цвет 25 раз
-    t.circle(x)
-    t.left(91)
+sides=8
+colors = ["salmon","saddle brown","PaleVioletRed","plum1", "sea green", "silver", "sienna", "peru"] # переменная со списком цветов
+for x in range(360):
+    t.color(colors[x%sides]) # 0<=x<=100(range), x%sides(6) - результатом будет остаток от деления
+    t.forward(x*3/sides+x)
+    t.left(360/sides+1)
+    t.width(x*sides/200) # толщина линии
+
