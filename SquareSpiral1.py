@@ -1,13 +1,18 @@
-#  square spiral 1.1 - рисование 4цетной кадратной сприрали.
+#  square spiral 1.2 - цветная спираль из имени.
 import turtle
 turtle.bgcolor("black")
 t = turtle.Pen()
-sides=eval(input("Введите число от 1 до 8: "))
-colors = ["salmon","saddle brown","PaleVioletRed","plum1", "sea green", "silver", "sienna", "peru"] # переменная со списком цветов
-for x in range(360):
-    t.color(colors[x%sides]) # 0<=x<=100(range), x%sides(6) - результатом будет остаток от деления
-    t.forward(x*3/sides+x)
-    t.left(360/sides+1)
-    t.left(90)
-    t.width(x*sides/200) # толщина линии
+colors = ["salmon", "sea green", "silver", "sienna"] # переменная со списком цветов
+
+# всплывающее окно запрашивающие имя пользователя
+your_nane=turtle.textinput("Введите свое имя","Как вас зовут?")
+
+# Отрисовка спирали из имени пользователя
+for x in range(100):
+    t.color(colors[x%4])
+    t.penup() # не рисовать "обычные" линии
+    t.forward(x*4)
+    t.pendown()
+    t.write(your_nane, font=("Arial", int((x+4)/4), "bold")) # написать имя пользователя, увеличивая шрифт
+    t.left(92)
 
