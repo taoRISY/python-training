@@ -6,8 +6,7 @@ colors=["salmon","saddle brown","PaleVioletRed","plum1", "sea green", "silver", 
 # задаем количество сторон
 sides=int(turtle.numinput("Сколько сторон", "Задайте количество сторон (1-8)", 4, 1, 8))
 for x in range(360):
-    t.color(colors[x%sides])
-    t.forward(x*3/sides+x) # изменить размер в соотвецтвии с к-вом сторон
-    t.left(360/sides+1) 
-    t.width(x*sides/200) # увеличить толщину линии по мере движения во внешнюю сторону
-
+    t.color(colors[x%sides]) # исп. нужное к-во цветов
+    t.forward(x*3/sides+x) # изменить размер в соотвецтвии с к-вом сторон 
+    t.left(360/sides+1) # задаем угол
+    t.width(x*sides/200) # увеличить толщину линии по мере движения
